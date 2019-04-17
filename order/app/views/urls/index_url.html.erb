@@ -1,0 +1,38 @@
+<%= form_tag("/urls/edit") do %>
+<%= form_tag("/urls/delete_url") do %>
+<div class="text-right" style="margin-top:40px;">
+<%= link_to("New", "/urls/#{@category.name}/new_url", {class: "btn btn-outline-primary"}) %>
+<button type="submit" class="btn btn-outline-warning"  >Update</button>
+<button type="submit" class="btn btn-outline-danger" >Delete</button>
+</div>
+<section class="category-lists">
+  <div class="category-list-top">
+    <ul>
+      <li class="list-top1"><a href="/urls"><%= image_tag "folder.png" %></a></li>
+      <li class="list-top2"><strong><%= @category.name %></strong></li>
+      <li class="list-top3"><!--<img src="{% static "url/plus.png" %}"></a> --></li>
+    </ul>
+  </div>
+
+  <div class="categories">
+    <ul>
+<% @urls.each do |url| %>
+
+      <li class="folder-img"><%= image_tag "link.png" %></li>
+      <li class="category-title"><a href="<%= url.url %>" style="text-decoration:none;" target="_blank"><%= url.title %></a></li>
+      <!--<li class="delete-img"><button type="submit" name="delete_id" class="aiueo" value={{ subclass.id }}><img src="{% static "url/delete.png" %}"></li>-->
+      <li class="delete-img">
+        <div class="checkbox">
+          <label>
+            <input type="radio" name="check_id" value="<%= url.id %>">
+          </label>
+        </div>
+      </li>
+<% end %>
+    </ul>
+<% end %>
+<% end %>
+
+  </div>
+</section>
+</form>

@@ -1,0 +1,16 @@
+
+
+<div class="mt-5">
+<div class="mx-auto" style="width: 50%;">
+<div class="card">
+  <img class="card-img-top" src="<%= "/user_images/#{@user.image_name}" %>" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title">PROFILE</h4>
+    <p class="card-text">username: <%= @user.name %></p>
+    <p class="card-text">follower: </p>
+    <p class="card-text">following: </p>
+    <a href="<%= "/users/#{@user.id}/edit" %>" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
+</div>

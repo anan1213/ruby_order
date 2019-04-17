@@ -1,0 +1,22 @@
+<h1 class="mt-5">ADD URL</h1>
+<%= form_tag("/urls/update/#{@url.id}") do %>
+  <div class="form-group mt-5">
+    <label >タイトル</label>
+    <input class="form-control" name="title" value="<%= @url.title %>" >
+  </div>
+  <div class="form-group">
+    <label >URL</label>
+    <textarea class="form-control" name="url"><%= @url.url %></textarea>
+  </div>
+  <div class="form-group">
+    <label>カテゴリー</label>
+      <select name="category" class="form-control" value="<%= @url.category %>">
+        <% @categories.each do |category| %>
+        <option ><%= category.name %></option>
+        <% end %>
+      </select>
+  </div>
+<div class="text-right">
+  <button type="submit" class="btn btn-outline-dark" >送信</button>
+</div>
+<% end %>

@@ -1,0 +1,34 @@
+<%= form_tag("/urls/delete_category") do %>
+<div class="text-right" style="margin-top:40px;">
+<a class="btn btn-outline-primary" href="/urls/new_category">New</a>
+<button type="submit" class="btn btn-outline-danger" >Delete</button>
+
+</div>
+
+<section class="category-lists">
+  <div class="category-list-top">
+    <ul>
+      <li class="list-top1"></li>
+      <li class="list-top2"><strong>Category</strong></li>
+      <li class="list-top3 btn-flat-border"></li>
+    </ul>
+  </div>
+
+
+  <div class="categories">
+    <ul>
+    <% @categories.each do |category| %>
+    <li class="folder-img"><%= image_tag "folder.png" %></li>
+    <li class="category-title"><%= link_to(category.name, "/urls/#{category.name}")%></li>
+    <li class="delete-img">
+      <div class="checkbox">
+        <label>
+          <input type="radio" name="delete_id" value="<%= category.id %>">
+        </label>
+      </div>
+    </li>
+    <% end %>
+    </ul>
+<% end %>
+  </div>
+</section>

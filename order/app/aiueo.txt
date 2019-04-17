@@ -1,0 +1,2 @@
+<!-- <%= collection_select(:category, :name, @categories, :id, :name, :prompt => true) %> -->
+<!-- <%= f.collection_select(:name, @categories, :id, :name) %> -->
